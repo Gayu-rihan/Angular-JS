@@ -1,0 +1,28 @@
+<div class="container">
+        <div class="row">
+        <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <h1> Delete Todo</h1>
+                <div  class="customdiv">
+                <form class="form-group">
+                <div>
+                    <label>Description</label><br>
+                    <input type="text"  value="{{this.description}}"required/>
+                </div>
+                <br>
+                <div>
+                    <label>Status</label><br>
+                    <input type="text" required/><br>
+                </div>
+                <br>
+                <div class="justify-content-between">
+                <button type="button" class="btn btn-warning btn-sm" routerLink="/todos" value="{{todos.description}}">Delete</button>
+                <button type="button" class="btn btn-danger btn-sm" routerLink="/todos" value="{{todos.status}}">Cancel</button>
+                </div>
+            </form>
+        </div> 
+        </div>
+        <div class="col-lg-3"></div> 
+        </div> 
+    
+    </div>

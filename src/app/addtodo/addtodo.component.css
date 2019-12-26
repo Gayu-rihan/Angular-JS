@@ -1,0 +1,23 @@
+.customdiv{
+    margin:3px;
+    min-height: 600px;
+    font-size:15px;
+    padding-bottom:50px;
+    width:600px;
+}
+form{
+    background-color:lightblue;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:10px;
+    padding-bottom: 30px;
+    text-align:left;
+           
+}
+label{
+    font-weight: bold;
+}
+input{
+    border:solid 1px gray;
+    width:90%;
+}

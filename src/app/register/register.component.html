@@ -1,0 +1,88 @@
+<div class="container">
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <div class="customdiv">
+                
+                <form #registerForm="ngForm" class="form-group" (ngSubmit)="onSubmit(registerForm)">
+                        {{registerForm.value|json}}
+                        <h1 style="text-align: center;">SignUp</h1>
+                        <div class="form-group ">
+                                <label>First Name</label>      
+                                <input type="text" class="form-control p-4"  required   placeholder="First name" name="fname" [(ngModel)]="user.fname"  #fname="ngModel"  [class.is-invalid]="fname.invalid && fname.touched" />
+                                <small class="text-danger" [class.d-none]="fname.valid || fname.untouched" >Name is required !</small>               
+                        </div>
+                        <div class="form-group ">
+                                <label>Last Name</label>  
+                                <input type="text" class="form-control p-4"  placeholder="Last name"  name="lname" ngModel [(ngModel)]="user.lname"/>
+                                                    
+                        </div>
+                        <div class="form-group ">
+                                <label>Mobile No</label>  
+                                <input type="tel" class="form-control p-4"  placeholder="Mobile number" #mobileno="ngModel" name="mobileno" ngModel [(ngModel)]="user.mobileno" pattern="[0-9]{10}" [class.is-invalid]="mobileno.invalid && mobileno.touched" required />
+                                 <div *ngIf="mobileno.errors && (mobileno.invalid||mobileno.touched)">
+                                         <small class="text-danger" *ngIf="mobileno.errors.required">Mobile number is required</small>
+                                         <small class="text-danger" *ngIf="mobileno.errors.pattern">Mobile number should be 10 digits</small>
+                                 </div>                  
+                        </div>
+                        <div class="form-goup">
+                                <input type="radio" name="gender"  value="male" ngModel [(ngModel)] ="user.gender"/><b>Male </b>
+                                <input type="radio" name="gender" value="female" ngModel [(ngModel)]="user.gender" /><b>Female</b>
+                        </div>
+                        <br>
+                        <div class="form-group ">
+                                <label>E-mail</label>            
+                                <input type="email" class="form-control p-4"  placeholder="Email address"  name="email" ngModel [(ngModel)]="user.email"/>
+                                                    
+                        </div>
+                        <div class="form-group  ">
+                                 <label>Password</label>              
+                                <input type="password" class="form-control p-4"  placeholder="Password" name="pass"  ngModel [(ngModel)]="user.pass" />
+                                                    
+                        </div>
+                        <div class="form-group ">
+                                 <label>Re-enter Password</label>              
+                                <input type="password" class="form-control p-4"  placeholder=" Re-enter password" name="repass" ngModel [(ngModel)]="user.repass"/>
+                                                    
+                        </div>
+                        <div ngModelGroup="address" class="fieldset">
+                                <div class="form-group ">
+                                        <label>City</label>              
+                                        <input type="text" class="form-control p-4"  placeholder="City" name="city" ngModel [(ngModel)]="user.city" />
+                                                   
+                                </div>
+                       
+                                <div class="form-group ">
+                                        <label>State</label>              
+                                        <input type="text" class="form-control p-4"  placeholder="State" name="state" ngModel [(ngModel)]="user.state" />
+                                           
+                                </div>
+                                <div class="form-group ">
+                                        <label>Pincode</label>              
+                                        <input type="text" class="form-control p-4"  placeholder="Pincode" name="pincode" ngModel [(ngModel)]="user.pincode" />
+                                                   
+                                </div>
+                        </div>
+                        <div class="form-group">
+                                <input type="checkbox"  name="checkbox" ngModel > I agree to the terms and conditions
+                        </div>
+            
+                        <button type="submit"  [disabled]="registerForm.form.invalid" class="btn btn-primary btn-lg">Submit</button><br>
+                
+                                    
+                           <!--{{registerForm.value|json}}-->            
+                                       
+                                        
+                                    
+                                    
+                
+                </form>
+        </div>
+
+    </div>
+    <div class="col-lg-3">
+            
+    </div>
+
+</div>
+</div>

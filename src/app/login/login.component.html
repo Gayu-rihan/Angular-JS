@@ -1,0 +1,20 @@
+<div class="container">
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+        <form #loginForm="ngForm" >
+            {{loginForm.value|json}}  
+            <h1 style="text-align: center;">Login</h1>
+            <small *ngIf='invalidLoginFlag'>{{ invalidMsg }}</small><br><br>
+            <input type="text" name="username" [(ngModel)]="username"  required ngModel #name="ngModel"  [class.is-invalid]="name.invalid && name.touched" class="form-control p-4" placeholder="Username" /><br><br>
+            <input type="password"  name="password" [(ngModel)]="password" required  ngModel  class="form-control p-4" placeholder="Password"/><br><br>
+                <!--<input (click)='login()' type="submit" value="Login" />-->
+            <button type="submit" ngModel class="btn btn-primary" >Login</button>
+        </form>
+
+    </div>
+
+    <div class="col-lg-4" ></div>
+</div>
+</div>
